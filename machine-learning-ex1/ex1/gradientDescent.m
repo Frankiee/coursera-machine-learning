@@ -22,8 +22,6 @@ for iter = 1:num_iters
     errors = (predictions - y);              % errors     m * 1
     errors_repeated = repmat(errors, 1, n);  % m * n
 
-    a = X.*errors_repeated;
-
     delta = sum(X.*errors_repeated);
 
     theta = theta - (alpha * (1/m) * delta)';
